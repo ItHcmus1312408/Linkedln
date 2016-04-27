@@ -1,0 +1,82 @@
+{
+    "education": [{
+        "degree": "Graduate",
+        "field_of_study": "IT",
+        "from_date": "2010-08-01",
+        "grade": "12/12",
+        "notes": "",
+        "school_name": "Nguyen Thi Minh Khai High School",
+        "to_date": "2013-05-30"
+    },
+		{
+        "degree": "Studying",
+        "field_of_study": "IT",
+        "from_date": "2013-09-01",
+        "grade": "3th",
+        "notes": "",
+        "school_name": "Ho Chi Minh University of Science",
+        "to_date": "2017-09-01"
+    }],
+    "experiences": [{
+        "company": {
+            "location": "Code",
+            "name": "Code",
+            "url": "http://"
+        },
+        "from_date": "2013-09-01",
+        "job_description": "Eat, Sleep, Deadline.",
+        "job_position": "Student",
+        "to_date": "..."
+    }],
+    "personal_informations": {
+        "name": "Như",
+		"country": "Việt Nam",
+		"email": "luunhu0108@gmail.com",
+        "phone_number": "(84) 168 6720311",
+        "social_contacts": {
+            "twitter": "http://twitter",
+            "linkedin": "http://linkedin",
+            "skype": "http://skype",
+            "email": "mailto:#",
+            "github": "http://github",
+			"tumblr": "http://tumblr"
+        },
+        "surname": "Lưu Hồng Ngọc Quỳnh"
+    },
+    "projects": [{
+        "description": "Play chess on gomoku web server",
+        "from_date": "2015-11",
+        "name": "Gomoku",
+        "to_date": "2015-12",
+        "url": "http://"
+    }, {
+		"description": "Simple drawing application on computer",
+        "from_date": "2015-09",
+        "name": "Paint",
+        "to_date": "2015-10",
+        "url": "http://"
+	},{
+        "description": "Help examinee get College Entrance's information",
+        "from_date": "20015-10",
+        "name": "College Entrance Helper",
+        "to_date": "2015-12",
+        "url": "http://"
+    }],
+    "skills": [{
+        "level": "7",
+        "name": "C++/C#"
+    }, {
+        "level": "4",
+        "name": "Angular.js"
+    }, {
+        "level": "6",
+        "name": "Java"
+    }, {
+        "level": "6",
+        "name": "Android"
+    }, {
+		"level": "7",
+		"name": "Teamwork"
+	}],
+    "summary": "Make money, don't let the money make you. Change the game, don't let the game change you."
+}
