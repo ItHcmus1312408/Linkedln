@@ -1,13 +1,30 @@
 <div class="row" ng-show="cv.informations.skills">
-    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-        <h3><i class="fa fa-gears text-grey-color"></i> Skills</h3>
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+        <h3><i class="fa fa-briefcase text-grey-color"></i> Skills</h3>
     </div>
     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-        <h3 class="text-right">
-            <a class="" href ng-click="skillsCtrl.show()"><i class="fa fa-angle-down" ng-hide="skillsCtrl.toggle"></i></a>
-            <a class="" href ng-click="skillsCtrl.hide()"><i class="fa fa-angle-up" ng-show="skillsCtrl.toggle"></i></a>
+        <h3 ng-hide="cv.skills_disabled" class="text-right">
+			<img ng-click="cv.skills_Add()" src="./img/add.png" alt="Add-icon" style="width:20px;cursor:pointer"></img>      
         </h3>
     </div>
+	
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+		<h3 class="text-right">
+			<a class="" href ng-click="skillsCtrl.show()"><i class="fa fa-angle-down" ng-hide="skillsCtrl.toggle"></i></a>
+			<a class="" href ng-click="skillsCtrl.hide()"><i class="fa fa-angle-up" ng-show="skillsCtrl.toggle"></i></a> 
+		</h3>
+	</div>
+	
+	<div ng-show="cv.skills_disabled">
+		<span>Skill name: </span>
+		<input ng-model="cv.skill_text" ng-show="cv.skills_disabled" class="form-control">
+		<span>Skill level (from 1 to 10): </span>
+		<input ng-model="cv.skillLevel_text" ng-show="cv.skillLevel_disabled" class="form-control">
+		<button ng-click="cv.skills_save()">Save</button>
+		or
+		<button ng-click="cv.skills_cancel()">Cancel</button>
+	</div>
+	
     <div class="row" ng-repeat="skill in cv.informations.skills" ng-show="!skillsCtrl.toggle">
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <i class="fa fa-angle-right"></i> {{skill.name}}

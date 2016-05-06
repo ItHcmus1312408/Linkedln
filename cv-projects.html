@@ -1,6 +1,11 @@
 <div class="row" ng-show="cv.informations.projects">
-    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
         <h3><i class="fa fa-check text-grey-color"></i> Projects</h3>
+    </div>
+	<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+        <h3 ng-hide="cv.projectName_disabled" class="text-right">
+           <img ng-click="cv.Project_Add()" src="./img/add.png" alt="Add-icon" style="width:20px;cursor:pointer"></img>
+        </h3>		
     </div>
     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
         <h3 class="text-right">
@@ -8,15 +13,45 @@
             <a class="" href ng-click="projectsCtrl.hide()"><i class="fa fa-angle-up" ng-show="projectsCtrl.toggle"></i></a>
         </h3>
     </div>
+	<div ng-show="cv.projectName_disabled">
+		<span>Project Name: </span>
+		<input ng-model="cv.projectName_text" ng-show="cv.projectName_disabled" class="form-control">
+		<span>From Date: </span>
+		<input ng-model="cv.projectFromDate_text" ng-show="cv.projectFromDate_disabled" class="form-control">
+		<span>To Date: </span>
+		<input ng-model="cv.projectToDate_text" ng-show="cv.projectToDate_disabled" class="form-control">
+		<span>Description: </span>
+		<input ng-model="cv.projectDescription_text" ng-show="cv.projectDescription_disabled" class="form-control">
+		<button ng-click="cv.Project_save()">Save</button>
+		or
+		<button ng-click="cv.Project_cancel()">Cancel</button>
+	</div>
     <div class="row" ng-show="!projectsCtrl.toggle">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="bs-callout bs-callout-info" ng-repeat="project in cv.informations.projects | orderBy:'-to_date'">
-                <span>
-                    <strong><a href="{{project.url}}" target="_blank">{{project.name}}</a>
-                    </strong>
-                </span>
-                <span class="text-grey-color">({{project.from_date | date : 'dd/MM/yyyy'}} to {{project.to_date | date : 'dd/MM/yyyy'}})</span>
-                <p>{{project.description}}</p>
+				<div ng-hide="cv.projectNameDate_disabled" ng-dblclick="cv.projectNameDate_enabled(project)">
+					<span>
+						<strong><a target="_blank">{{project.name}}</a>
+						</strong>
+					</span>
+					<span class="text-grey-color">({{project.from_date | date : 'dd/MM/yyyy'}} to {{project.to_date | date : 'dd/MM/yyyy'}})</span>
+					<p>{{project.description}}</p>
+                </div>
+				<div ng-show="cv.projectNameDate_disabled">
+						<span>Project Name: </span>
+						<input ng-model="cv.projectNameDate_text" ng-show="cv.projectNameDate_disabled" class="form-control">
+						<span>From Date: </span>
+						<input ng-model="cv.projectFromDate_text" ng-show="cv.projectFromDate_disabled" class="form-control">
+						<span>To Date: </span>
+						<input ng-model="cv.projectToDate_text" ng-show="cv.projectToDate_disabled" class="form-control">
+						<span>Description: </span>
+						<input ng-model="cv.projectDescriptionDate_text" ng-show="cv.projectDescriptionDate_disabled" class="form-control">
+						
+						<button ng-click="cv.projectNameDate_save(project)">Save</button>
+						or
+						<button ng-click="cv.projectNameDate_cancel()">Cancel</button>
+					</div>
+					
             </div>
         </div>
     </div>
