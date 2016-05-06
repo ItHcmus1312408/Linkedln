@@ -29,8 +29,9 @@
         "to_date": "..."
     }],
     "personal_informations": {
-        "name": "Như",
+        "name": "Lưu Hồng Ngọc Quỳnh Như",
 		"country": "Việt Nam",
+		"current": "Student",
 		"email": "luunhu0108@gmail.com",
         "phone_number": "(84) 168 6720311",
         "social_contacts": {
@@ -40,8 +41,7 @@
             "email": "mailto:#",
             "github": "http://github",
 			"tumblr": "http://tumblr"
-        },
-        "surname": "Lưu Hồng Ngọc Quỳnh"
+        }
     },
     "projects": [{
         "description": "Play chess on gomoku web server",
@@ -78,5 +78,7 @@
 		"level": "7",
 		"name": "Teamwork"
 	}],
-    "summary": "Make money, don't let the money make you. Change the game, don't let the game change you."
+    "summary": [{
+		"content": "Make money, don't let the money make you. Change the game, don't let the game change you."
+	}]
 }

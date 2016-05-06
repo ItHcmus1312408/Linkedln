@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cv">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1312408 - CV</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/angular.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <!-- Angular modules -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/cvsections.js"></script>
+</head>
+
+<body ng-controller="CurriculumCtrl as cv">
+    <div class="container">
+        <!-- Header -->
+        <section>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h1 class="page-header text-center">My CV</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal info -->
+        <cv-info></cv-info>
+
+        <!-- Summary -->
+        <cv-summary></cv-summary>
+
+        <!-- Work experiences -->
+        <cv-experiences></cv-experiences>
+
+        <!-- Projects -->
+        <cv-projects></cv-projects>
+
+        <!-- Skills -->
+        <cv-skills></cv-skills>
+		
+        <!-- Education -->
+        <cv-education></cv-education>
+
+        <!-- Social contacts -->
+        <hr>
+        <cv-social-contacts></cv-social-contacts>
+    </div>
+</body>
+
+</html>
