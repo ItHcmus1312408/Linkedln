@@ -1,12 +1,33 @@
 <section ng-show="cv.informations.personal_informations">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div cla
+		ss="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h3><i class="fa fa-info-circle text-grey-color"></i> Personal Informations</h3>
+			<h3 ng-hide="cv.info_disabled" class="text-right">
+				<img ng-click="cv.info_Add()" src="./img/add.png" alt="Add-icon" style="width:20px;cursor:pointer"></img>      
+			</h3>
         </div>
+
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
             <img src="img/profilepicture.jpg" alt="profile picture" class="img-square img-responsive ">
         </div>
-        <div class="col-sm-2 col-md-2 col-lg-2 text-right text-grey-color hidden-xs">
+        <div ng-show="cv.info_disabled">
+			<span>Name: </span>
+			<input ng-model="cv.info_text" ng-show="cv.info_disabled" class="form-control">
+			<span>Country: </span>
+			<input ng-model="cv.infoCountry_text" ng-show="cv.infoCountry_disabled" class="form-control">
+			<span>Current: </span>
+			<input ng-model="cv.infoCurrent_text" ng-show="cv.infoCurrent_disabled" class="form-control">
+			<span>Email: </span>
+			<input ng-model="cv.infoEmail_text" ng-show="cv.infoEmail_disabled" class="form-control">
+			<span>Phone number: </span>
+			<input ng-model="cv.infoPhone_text" ng-show="cv.infoPhone_disabled" class="form-control">
+			<button ng-click="cv.info_save()">Save</button>
+			or
+			<button ng-click="cv.info_cancel()">Cancel</button>
+		</div>
+		
+		<div class="col-sm-2 col-md-2 col-lg-2 text-right text-grey-color hidden-xs">
             <h2>Name:</h2>
 			<h5>Country:</h5>
             <h5>Current:</h5>
@@ -16,13 +37,13 @@
         <div class="col-sm-8 col-md-8 col-lg-8">
             <h2>
                 <span class="visible-xs-* hidden-sm hidden-md hidden-lg text-grey-color">Name:</span> 
-                {{cv.informations.personal_informations.surname}} {{cv.informations.personal_informations.name}}</h2>
+               {{cv.informations.personal_informations.name}}</h2>
             <h5>
 			<h5>
                 <span class="visible-xs-* hidden-sm hidden-md hidden-lg text-grey-color"><i class="fa fa-phone"></i> Country:</span> 
                 {{cv.informations.personal_informations.country}}
             </h5>
-                <span class="visible-xs-* hidden-sm hidden-md hidden-lg text-grey-color">Current:</span> {{cv.position}}</h5>
+                <span class="visible-xs-* hidden-sm hidden-md hidden-lg text-grey-color">Current:</span> {{cv.informations.personal_informations.current}}</h5>
 			<h5>
                 <span class="visible-xs-* hidden-sm hidden-md hidden-lg text-grey-color">Email:</span>
                 <a href="{{cv.current_company_url}}" target="_blank"> {{cv.informations.personal_informations.email}}</a>
